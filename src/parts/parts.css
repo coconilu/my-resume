@@ -18,6 +18,11 @@
   background-color: #CFDEE7;
 }
 
+.resume-job-hunter {
+  font-size: 2em;
+  font-weight: 900;
+}
+
 .resume-header-avatar {
   margin-left: 10px;
   border-radius: 50%;
@@ -34,16 +39,20 @@
 }
 
 .resume-header-simple-message {
-
+  position: relative;
+  flex: 1;
+  color: #4472ca;
+  margin-left: 10px;
 }
 
 .resume-header-right {
   flex: 4;
   background-color: #4472ca;
   position: relative;
+  color: white;
 }
 
-.resume-header-right > ul {
+ul.resume-list {
   position: absolute;
   display: inline-block;
   height: fit-content;
@@ -55,9 +64,118 @@
   padding-left: 20px;
 }
 
-.resume-header-right > ul > li {
+ul.resume-list--absolute {
+  position: absolute;
+}
+
+ul.resume-list--relative {
+  position: relative;
+}
+
+ul.resume-list > li {
   list-style: none;
   text-align: left;
-  color: white;
   margin: auto 0;
+  line-height: 1.9;
+}
+
+.resume-field > span:first-of-type {
+  font-weight: bold
+}
+
+.resume-section-container {
+  text-align: left;
+}
+
+.resume-section {
+  margin: 1em auto;
+  border: 1px solid #dcdee2;
+  border-color: #e8eaec;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+  padding: 0 1em;
+}
+
+.resume-section:hover {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  border-color: #eee;
+}
+
+.resume-section-header {
+  border-left: 0.2em solid #4ABDAC;
+  font-weight: bold;
+  font-size: 1.4em;
+  padding-left: 0.4em;
+  height: 1.4em;
+  line-height: 1.4em;
+}
+
+.resume-section-header > span {
+  position: relative;
+}
+
+.resume-section-header > span::after {
+  content: '';
+  transition: all 0.5s ease;
+  width: 0;
+  height: 2px;
+  background-color: #3f485b;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+}
+
+.resume-section:hover > .resume-section-header > span::after {
+  width: 100%;
+}
+
+.resume-section-body {
+  min-height: 100px;
+  margin-top: 0.2em;
+
+}
+
+.resume-paragraph-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.resume-paragraph-container-title {
+  flex: 2;
+  text-align: right;
+  padding-right: 0.5em;
+  font-weight: bold;
+  color: #4472ca;
+}
+
+.resume-paragraph-container-boby {
+  flex: 8;
+  padding-left: 2em;
+  padding-right: 5em;
+  position: relative;
+}
+
+.resume-paragraph-container-boby > p:first-child {
+  font-weight: bold;
+  color: #92b4f4;
+}
+
+.resume-paragraph-container-boby > *:nth-child(n+2) {
+  font-size: 0.8em;
+}
+
+.text-indent-2em {
+  padding-left: 1em;
+}
+
+.project-details-container > p:first-child {
+  font-weight: bold;
+}
+
+.project-details-container > p:last-child {
+  color: #666;
+  line-height: 2em;
 }
