@@ -1,0 +1,63 @@
+.resume-header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  height: 120px;
+}
+
+.resume-header-left {
+  flex: 6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #CFDEE7;
+}
+
+.resume-header-avatar {
+  margin-left: 10px;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.resume-header-avatar > img {
+  max-width: 100%;
+  position: relative;
+  top: -20px;
+}
+
+.resume-header-simple-message {
+
+}
+
+.resume-header-right {
+  flex: 4;
+  background-color: #4472ca;
+  position: relative;
+}
+
+.resume-header-right > ul {
+  position: absolute;
+  display: inline-block;
+  height: fit-content;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.resume-header-right > ul > li {
+  list-style: none;
+  text-align: left;
+  color: white;
+  margin: auto 0;
+}
