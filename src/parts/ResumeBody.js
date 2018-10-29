@@ -109,7 +109,32 @@ class ResumeHeader extends Component {
             </div>
           </ResumeParagraph>
         </ResumeSection>
-        <ResumeSection title="社区活动"></ResumeSection>
+        <ResumeSection title="社区活动">
+          <ResumeParagraph titleLeft="个人博客" titleRight="&nbsp;">
+            <div>
+              <ProjectDetails title={(<a className="a-without-decoration" href="https://github.com/coconilu/Blog" target="_blank" rel="noopener noreferrer">GitHub上的个人博客：https://github.com/coconilu/Blog</a>)}>
+              </ProjectDetails>
+            </div>
+          </ResumeParagraph>
+          <ResumeParagraph titleLeft="翻译活动" titleRight="&nbsp;">
+            <div>
+              <ProjectDetails title={(<a className="a-without-decoration" href="https://developer.mozilla.org/en-US/profiles/sunline.bucket" target="_blank" rel="noopener noreferrer">参与MDN翻译：https://developer.mozilla.org/en-US/profiles/sunline.bucket</a>)}>
+              </ProjectDetails>
+              <ProjectDetails title={(<a className="a-without-decoration" href="https://github.com/coconilu/Blog/issues/36" target="_blank" rel="noopener noreferrer">参与掘金翻译计划：https://github.com/coconilu/Blog/issues/36</a>)}>
+              </ProjectDetails>
+            </div>
+          </ResumeParagraph>
+          <ResumeParagraph titleLeft="开源项目" titleRight="&nbsp;">
+            <div>
+              <ProjectDetails title={(<a className="a-without-decoration" href="https://www.npmjs.com/package/@coconilu/mypromise" target="_blank" rel="noopener noreferrer">仿写Promise：https://www.npmjs.com/package/@coconilu/mypromise</a>)}>
+              </ProjectDetails>
+              <ProjectDetails title={(<a className="a-without-decoration" href="https://www.npmjs.com/package/my-lazyload-picture" target="_blank" rel="noopener noreferrer">图片懒加载：https://www.npmjs.com/package/my-lazyload-picture</a>)}>
+              </ProjectDetails>
+              <ProjectDetails title={(<a className="a-without-decoration" href="https://www.npmjs.com/package/my-flip-animation" target="_blank" rel="noopener noreferrer">FLIP动画：https://www.npmjs.com/package/my-flip-animation</a>)}>
+              </ProjectDetails>
+            </div>
+          </ResumeParagraph>
+        </ResumeSection>
         <ResumeSection title="个人能力"></ResumeSection>
         <ResumeSection title="自我评价"></ResumeSection>
       </article>
