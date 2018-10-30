@@ -54,6 +54,9 @@ class ResumeHeader extends Component {
                 4. 重构多次，增加项目可维护性和易读性；<br />
                 5. 调研Nginx并用于开发测试阶段，加快项目进度。
               </ProjectDetails>
+              <ProjectDetails title="成品地址：">
+                <ResumeLink link="https://ldygo.leanapp.cn" />
+              </ProjectDetails>
             </div>
           </ResumeParagraph>
           <ResumeParagraph titleLeft="开源社区" titleRight="iGitStar">
@@ -78,6 +81,9 @@ class ResumeHeader extends Component {
               <ProjectDetails title="难点：">
                 设计骨架屏；<br />
                 用防抖模式设计“下滑刷新”
+              </ProjectDetails>
+              <ProjectDetails title="成品地址：">
+                <ResumeLink link="https://igitstar.leanapp.cn" />
               </ProjectDetails>
             </div>
           </ResumeParagraph>
@@ -116,7 +122,11 @@ class ResumeHeader extends Component {
         <ResumeSection title="社区活动">
           <ResumeParagraph titleLeft="个人博客" titleRight="&nbsp;">
             <div>
-              <ProjectDetails title={(<ResumeLink link="https://github.com/coconilu/Blog" description="GitHub上的个人博客：" />)}>
+              <ProjectDetails title={(<ResumeLink link="https://github.com/coconilu/Blog" description="GitHub 个人博客：" />)}>
+              </ProjectDetails>
+              <ProjectDetails title={(<ResumeLink link="https://codepen.io/coconilu" description="CodePen 个人主页：" />)}>
+              </ProjectDetails>
+              <ProjectDetails title={(<ResumeLink link="https://juejin.im/user/5ab38356518825558b3dd86e/postsu" description="掘进个人首页：" />)}>
               </ProjectDetails>
             </div>
           </ResumeParagraph>
