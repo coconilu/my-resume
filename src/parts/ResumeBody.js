@@ -16,15 +16,15 @@ class ResumeHeader extends Component {
         </ResumeSection>
         <ResumeSection title="工作经验">
           <ResumeParagraph titleLeft="2017.03-至今" titleRight="深圳前海联动云汽车租赁有限公司／科技开发部">
-            <p>1. 负责完善和维护公司内部的流程系统（BPM）</p>
-            <p>2. 负责设计和开发公司内部的“员工自助系统”</p>
+            <p>1. 负责完善和维护公司内部的流程系统（BPM）；</p>
+            <p>2. 负责设计和开发公司内部的“员工自助系统”；</p>
           </ResumeParagraph>
           <ResumeParagraph titleLeft="2016.08-2017.02" titleRight="卓望数码技术深圳有限公司／研发事业部">
-            <p>1. 开发维护网络局数据项目，编写部署说明书指导运维部同事安装升级系统</p>
+            <p>1. 开发维护网络局数据项目，编写部署说明书指导运维部同事安装升级系统；</p>
             <p>2. 主导使用Haproxy代理服务器分区域部署原项目。</p>
           </ResumeParagraph>
           <ResumeParagraph titleLeft="2015.09-2016.07" titleRight="深圳市共济科技股份有限公司／研发部">
-            <p>1. 调研Esper、Drools和StreamBase开源流引擎，与师兄合作开发一个事件流处理和复杂事件处理引擎</p>
+            <p>1. 调研Esper、Drools和StreamBase开源流引擎，与师兄合作开发一个事件流处理和复杂事件处理引擎；</p>
             <p>2. 开发一个微信后台，用以及时推送重要（如机房预警、告警）消息给用户。</p>
           </ResumeParagraph>
         </ResumeSection>
@@ -32,29 +32,21 @@ class ResumeHeader extends Component {
           <ResumeParagraph titleLeft="联动云" titleRight="员工自助平台">
             <div>
               <ProjectDetails title="背景：">
-                发起该项目的原因是公司处于初期阶段，内部系统不健全。刚开始仅是一个订晚餐的系统，后来多了会议室预定的系统。同事们都觉得不错。于是我做了一个决定，把它们汇集起来做成一个平台——员工自助平台。
+                发起该项目的原因是公司处于初期阶段，内部系统不健全。刚开始仅是一个订晚餐的系统，后来多了会议室预定的系统。于是我做了一个决定，把它们汇集起来做成一个可拓展的平台。
               </ProjectDetails>
-              <ProjectDetails title="架构：">
-                使用典型的B/S架构。<br />
-                类似小程序平台，主模块提供了账号鉴权、异步加载动画功能，可以不断新增业务模块，目前已经有如下模块：<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;1. 加班晚餐订购<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;2. 会议室预约<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;3. 公寓管理<br />
-                &nbsp;&nbsp;&nbsp;&nbsp;4. 办公用品领用<br />
-                对接了企业微信的通讯录管理API，免去用户创建账号的麻烦，仅需要使用手机版企业微信扫一扫便可以登录。<br />
-                运行在LeanCloud提供的云端服务器上面的，调用了LeanCloud的数据处理功能，一切都运行在HTTPS协议上，可以保证数据安全。
+              <ProjectDetails title="开发经过：">
+                1. 技术选型很重要，为了保证开发质量和效率，我选择当时较为成熟的Express框架搭设服务器，使用中文文档齐全的VueJS和iView组件库设计页面；<br />
+                2. 账号鉴权模块使用了企业微信的开放API —— OAuth2.0，保证用户仅需使用企业微信扫一扫便可登录，省去繁琐的注册、登录、注销操作；<br />
+                3. 使用浏览器本地持久化API —— localStorage来保存用户登录状态，避免频繁扫码登录；<br />
+                4. 为了方便系统扩展更多模块，使用Vue Router拆分主模块和可插拔模块，主模块提供用户信息管理、异步加载过渡动画等功能，可插拔模块有“加班晚餐订购”、“会议室预约”、“公寓管理”、“办公用品领用”等等；<br />
+                5. 主模块使用Vuex存储可以被监听的全局数据，便于各个可插拔模块修改和监听共享数据；<br />
+                6. 服务器选择搭设在LeanCloud云端服务器，价格便宜，且网速无限制，最重要的是提供了数据持久化API，还有提供HTTPS端口；<br />
+                7. 开发测试阶段，借助webpack的热更新加快前端的页面开发，并使用Nginx代理功能来打破前后端数据调试的跨域请求限制；<br />
+                8. 使用webpack异步请求模块功能，在首屏加载的时候忽略掉不常用的可插拔模块；<br />
+                9. 使用css的transition、animation特性和animation.css动画库来强化用户体验，使操作更加顺滑；<br />
+                10. 多次重构代码，使项目更加易维护和易阅读。<br />
               </ProjectDetails>
-              <ProjectDetails title="技术选型：">
-                基于NodeJS（Express）、VueJS、iView、axios编写而成。
-              </ProjectDetails>
-              <ProjectDetails title="承担任务：">
-                1. 确定技术选型，保证项目的可行性和可快速开发迭代性；<br />
-                2. 设计架构，划分模块，使各模块职责分明；<br />
-                3. 调试和打通和企业微信API、LeanCloud API连接；<br />
-                4. 重构多次，增加项目可维护性和易读性；<br />
-                5. 调研Nginx并用于开发测试阶段，加快项目进度。
-              </ProjectDetails>
-              <ProjectDetails title="成品地址：">
+              <ProjectDetails title="发布地址：">
                 <ResumeLink link="https://ldygo.leanapp.cn" />
               </ProjectDetails>
             </div>
@@ -62,27 +54,19 @@ class ResumeHeader extends Component {
           <ResumeParagraph titleLeft="开源社区" titleRight="iGitStar">
             <div>
               <ProjectDetails title="背景：">
-                iGitStar 是管理 GitHub stars 的辅助工具， 对于经常需要翻阅 stars 或者借助 stars 学习的用户非常适用，它可以帮你置顶你喜欢的 star 项目。<br />
-                这也算是贡献给社区的一个项目。
+                iGitStar 是管理 GitHub stars 的辅助工具， 对于经常需要翻阅 stars 或者借助 stars 学习的用户非常适用，它可以帮你置顶你喜欢的 star 项目。
               </ProjectDetails>
-              <ProjectDetails title="架构：">
-                实现轻量级的架构，仅使用Koa提供网页资源；<br />
-                调用浏览器的本地持久化API储存用户的信息；<br />
-                对接GitHub开发者文档提供的获取数据API。<br />
+              <ProjectDetails title="开发经过：">
+                1. 选择轻量级的架构，使用Koa搭设服务器，仅配置了一个静态资源中间件，前端使用VueJS加上亲自动手写组件、动画、异步加载过渡效果；<br />
+                2. 借鉴当下流行的骨架屏特效作为首屏加载过渡效果；<br />
+                3. 使用“防抖”机制处理“滚动至底异步加载资源”的功能，节省触发滚动事件的次数；<br />
+                4. 为了在载入资源的时候不阻塞网页，使用“requestAnimationFrame”优化页面插入元素；<br />
+                5. 使用“媒体查询”重构项目为响应式架构，使手机端也可以正常使用；<br />
+                6. 初期阶段不考虑账号鉴权功能，繁琐的操作不容易留住用户，所以用户仅需要通过输入自己的GitHub用户名便可以使用，并使用浏览器本地持久化API保存用户登录信息；<br />
+                7. 查看官方文档，成功对接获取GitHub数据的公开API；<br />
+                8. 如果项目很受欢迎的话，后期会添加标签和搜索功能。<br />
               </ProjectDetails>
-              <ProjectDetails title="技术选型：">
-                仅基于NodeJS（Koa）、VueJS、axios编写，尽可能减少第三方依赖，实现轻量级的服务。
-              </ProjectDetails>
-              <ProjectDetails title="承担任务：">
-                页面设计，添加了很多交互元素，让页面更加人性化；<br />
-                使用流行的骨架屏作为异步加载动画；<br />
-                提供类似“下滑刷新”的功能，节省流量。
-              </ProjectDetails>
-              <ProjectDetails title="难点：">
-                设计骨架屏；<br />
-                用防抖模式设计“下滑刷新”
-              </ProjectDetails>
-              <ProjectDetails title="成品地址：">
+              <ProjectDetails title="发布地址：">
                 <ResumeLink link="https://igitstar.leanapp.cn" />
               </ProjectDetails>
             </div>
@@ -92,7 +76,7 @@ class ResumeHeader extends Component {
               <ProjectDetails title="介绍：">
                 中国移动集团内部使用的数据业务管理系统。
               </ProjectDetails>
-              <ProjectDetails title="承担任务：">
+              <ProjectDetails title="项目任务：">
                 1. 负责开发项目需求和处理现网漏洞，编写每个版本的数据库全量文档、部署说明书；<br />
                 2. 主导分区域部署项目，选用Haproxy代理服务器，并配置好各区块的消息端口。
               </ProjectDetails>
@@ -103,18 +87,8 @@ class ResumeHeader extends Component {
               <ProjectDetails title="介绍：">
                 用于检测服务器的健康数据，对温度过高、湿度过高等信息进行规则匹配和处理。
               </ProjectDetails>
-              <ProjectDetails title="承担任务：">
+              <ProjectDetails title="项目任务：">
                 开发一个事件流处理和复杂事件处理引擎，负责调研对比开源流引擎，考虑价格、文档是否齐全，并实现几个业务场景（重复事件、闪烁事件），最后写成演讲稿请示领导。
-              </ProjectDetails>
-            </div>
-          </ResumeParagraph>
-          <ResumeParagraph titleLeft="共济科技" titleRight="微信告警平台">
-            <div>
-              <ProjectDetails title="介绍：">
-                基于微信平台把机房预警、告警信息推送给业主。
-              </ProjectDetails>
-              <ProjectDetails title="承担任务：">
-                在学长的帮助下，使用微信平台提供的API实现：收集预警、告警信息，并推送给匹配的业主。
               </ProjectDetails>
             </div>
           </ResumeParagraph>
@@ -126,7 +100,7 @@ class ResumeHeader extends Component {
               </ProjectDetails>
               <ProjectDetails title={(<ResumeLink link="https://codepen.io/coconilu" description="CodePen 个人主页：" />)}>
               </ProjectDetails>
-              <ProjectDetails title={(<ResumeLink link="https://juejin.im/user/5ab38356518825558b3dd86e/postsu" description="掘进个人首页：" />)}>
+              <ProjectDetails title={(<ResumeLink link="https://juejin.im/user/5ab38356518825558b3dd86e/postsu" description="掘金个人主页：" />)}>
               </ProjectDetails>
             </div>
           </ResumeParagraph>
@@ -153,15 +127,16 @@ class ResumeHeader extends Component {
           <ResumeParagraph titleLeft="专业技能评估" titleRight="&nbsp;">
             <MyAbility />
           </ResumeParagraph>
-          <ResumeParagraph titleLeft="个人素质评估" titleRight="&nbsp;">
-            <MyMetaAbility />
+          <ResumeParagraph titleLeft="钻研经验" titleRight="&nbsp;">
+            <p className="self-assessment-p">1. 基于MDN官方文档和大量书籍总结过前端的开发模型</p>
+            <p className="self-assessment-p">2. 乐于了解运行原理，阅读过Express、Koa、VueJS源码</p>
+            <p className="self-assessment-p">3. 积极了解可以提升开发效率的工具，包括webpack、git、jest</p>
+            <p className="self-assessment-p">4. 喜欢拓展视野，掌握新的技术，比如TypeScript、GraphQL、FLIP动画</p>
           </ResumeParagraph>
         </ResumeSection>
-        <ResumeSection title="自我评价">
-          <ResumeParagraph titleLeft="" titleRight="">
-            <p className="self-assessment-p">基础踏实，学习能力顽强，可以应付许多新技术</p>
-            <p className="self-assessment-p">社交能力良好，能与不同性别、不同性格的人友好相处</p>
-            <p className="self-assessment-p">工作抗压能力良好，可以抗住突发性的高强度加班事件</p>
+        <ResumeSection title="自我评估">
+          <ResumeParagraph titleLeft="" titleRight="&nbsp;">
+            <MyMetaAbility />
           </ResumeParagraph>
         </ResumeSection>
       </article>

@@ -20,7 +20,7 @@ class ResumeHeader extends Component {
           <div className="resume-header-simple-message">
             <ul className="resume-list resume-list--absolute">
               <li className="resume-job-hunter">王耀辉</li>
-              <li><Field left="求职目标：" right="全栈工程师"></Field></li>
+              <li><Field left="求职目标：" right="前端工程师"></Field></li>
             </ul>
           </div>
         </section>
