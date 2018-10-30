@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import ResumeSection from './ResumeSection';
 import ResumeParagraph from './ResumeParagraph';
 import ProjectDetails from './ProjectDetails';
+import ResumeEducation from './ResumeEducation';
+import MyAbility from './MyAbility';
+import MyMetaAbility from './MyMetaAbility';
+import ResumeLink from './ResumeLink';
 
 class ResumeHeader extends Component {
   render() {
     return (
       <article className="resume-section-container">
         <ResumeSection title="教育背景">
-
+          <ResumeEducation />
         </ResumeSection>
         <ResumeSection title="工作经验">
           <ResumeParagraph titleLeft="2017.03-至今" titleRight="深圳前海联动云汽车租赁有限公司／科技开发部">
@@ -33,11 +37,11 @@ class ResumeHeader extends Component {
               <ProjectDetails title="架构：">
                 使用典型的B/S架构。<br />
                 类似小程序平台，主模块提供了账号鉴权、异步加载动画功能，可以不断新增业务模块，目前已经有如下模块：<br />
-                1. 加班晚餐订购<br />
-                2. 会议室预约<br />
-                3. 公寓管理<br />
-                4. 办公用品领用<br />
-                对接了企业微信的通讯录管理API，剩下用户创建账号的麻烦，仅需要使用手机版企业微信扫一扫便可以登录。<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;1. 加班晚餐订购<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;2. 会议室预约<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;3. 公寓管理<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;4. 办公用品领用<br />
+                对接了企业微信的通讯录管理API，免去用户创建账号的麻烦，仅需要使用手机版企业微信扫一扫便可以登录。<br />
                 运行在LeanCloud提供的云端服务器上面的，调用了LeanCloud的数据处理功能，一切都运行在HTTPS协议上，可以保证数据安全。
               </ProjectDetails>
               <ProjectDetails title="技术选型：">
@@ -112,31 +116,44 @@ class ResumeHeader extends Component {
         <ResumeSection title="社区活动">
           <ResumeParagraph titleLeft="个人博客" titleRight="&nbsp;">
             <div>
-              <ProjectDetails title={(<a className="a-without-decoration" href="https://github.com/coconilu/Blog" target="_blank" rel="noopener noreferrer">GitHub上的个人博客：https://github.com/coconilu/Blog</a>)}>
+              <ProjectDetails title={(<ResumeLink link="https://github.com/coconilu/Blog" description="GitHub上的个人博客：" />)}>
               </ProjectDetails>
             </div>
           </ResumeParagraph>
           <ResumeParagraph titleLeft="翻译活动" titleRight="&nbsp;">
             <div>
-              <ProjectDetails title={(<a className="a-without-decoration" href="https://developer.mozilla.org/en-US/profiles/sunline.bucket" target="_blank" rel="noopener noreferrer">参与MDN翻译：https://developer.mozilla.org/en-US/profiles/sunline.bucket</a>)}>
+              <ProjectDetails title={(<ResumeLink link="https://developer.mozilla.org/en-US/profiles/sunline.bucket" description="参与MDN翻译：" />)}>
               </ProjectDetails>
-              <ProjectDetails title={(<a className="a-without-decoration" href="https://github.com/coconilu/Blog/issues/36" target="_blank" rel="noopener noreferrer">参与掘金翻译计划：https://github.com/coconilu/Blog/issues/36</a>)}>
+              <ProjectDetails title={(<ResumeLink link="https://github.com/coconilu/Blog/issues/36" description="参与掘金翻译计划：" />)}>
               </ProjectDetails>
             </div>
           </ResumeParagraph>
           <ResumeParagraph titleLeft="开源项目" titleRight="&nbsp;">
             <div>
-              <ProjectDetails title={(<a className="a-without-decoration" href="https://www.npmjs.com/package/@coconilu/mypromise" target="_blank" rel="noopener noreferrer">仿写Promise：https://www.npmjs.com/package/@coconilu/mypromise</a>)}>
+              <ProjectDetails title={(<ResumeLink link="https://www.npmjs.com/package/@coconilu/mypromise" description="仿写Promise：" />)}>
               </ProjectDetails>
-              <ProjectDetails title={(<a className="a-without-decoration" href="https://www.npmjs.com/package/my-lazyload-picture" target="_blank" rel="noopener noreferrer">图片懒加载：https://www.npmjs.com/package/my-lazyload-picture</a>)}>
+              <ProjectDetails title={(<ResumeLink link="https://www.npmjs.com/package/my-lazyload-picture" description="图片懒加载：" />)}>
               </ProjectDetails>
-              <ProjectDetails title={(<a className="a-without-decoration" href="https://www.npmjs.com/package/my-flip-animation" target="_blank" rel="noopener noreferrer">FLIP动画：https://www.npmjs.com/package/my-flip-animation</a>)}>
+              <ProjectDetails title={(<ResumeLink link="https://www.npmjs.com/package/my-flip-animation" description="FLIP动画：" />)}>
               </ProjectDetails>
             </div>
           </ResumeParagraph>
         </ResumeSection>
-        <ResumeSection title="个人能力"></ResumeSection>
-        <ResumeSection title="自我评价"></ResumeSection>
+        <ResumeSection title="个人能力">
+          <ResumeParagraph titleLeft="专业技能评估" titleRight="&nbsp;">
+            <MyAbility />
+          </ResumeParagraph>
+          <ResumeParagraph titleLeft="个人素质评估" titleRight="&nbsp;">
+            <MyMetaAbility />
+          </ResumeParagraph>
+        </ResumeSection>
+        <ResumeSection title="自我评价">
+          <ResumeParagraph titleLeft="" titleRight="">
+            <p className="self-assessment-p">基础踏实，学习能力顽强，可以应付许多新技术</p>
+            <p className="self-assessment-p">社交能力良好，能与不同性别、不同性格的人友好相处</p>
+            <p className="self-assessment-p">工作抗压能力良好，可以抗住突发性的高强度加班事件</p>
+          </ResumeParagraph>
+        </ResumeSection>
       </article>
     );
   }

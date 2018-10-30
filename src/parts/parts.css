@@ -24,7 +24,7 @@
 }
 
 .resume-header-avatar {
-  margin-left: 10px;
+  margin-left: 1em;
   border-radius: 50%;
   height: 100px;
   width: 100px;
@@ -80,7 +80,8 @@ ul.resume-list > li {
 }
 
 .resume-field > span:first-of-type {
-  font-weight: bold
+  font-weight: bold;
+  padding-right: 1em;
 }
 
 .resume-section-container {
@@ -93,7 +94,7 @@ ul.resume-list > li {
   border-color: #e8eaec;
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
-  padding: 0 1em;
+  padding: 0 1em 1em;
 }
 
 .resume-section:hover {
@@ -108,6 +109,7 @@ ul.resume-list > li {
   padding-left: 0.4em;
   height: 1.4em;
   line-height: 1.4em;
+  margin-left: 2em;
 }
 
 .resume-section-header > span {
@@ -132,7 +134,6 @@ ul.resume-list > li {
 .resume-section-body {
   min-height: 100px;
   margin-top: 0.2em;
-
 }
 
 .resume-paragraph-container {
@@ -149,6 +150,7 @@ ul.resume-list > li {
   padding-right: 0.5em;
   font-weight: bold;
   color: #4472ca;
+  font-size: 1.1em;
 }
 
 .resume-paragraph-container-boby {
@@ -161,10 +163,11 @@ ul.resume-list > li {
 .resume-paragraph-container-boby > p:first-child {
   font-weight: bold;
   color: #92b4f4;
+  font-size: 1.1em
 }
 
 .resume-paragraph-container-boby > *:nth-child(n+2) {
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .text-indent-2em {
@@ -183,4 +186,24 @@ ul.resume-list > li {
 .a-without-decoration {
   text-decoration: none;
   color: #000;
+}
+
+.resume-education-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  height: 120px;
+  margin-left: 5em;
+}
+
+.resume-education-container-details {
+  margin-left: 1.5em;
+}
+
+.resume-education-container-details > p:first-child {
+  font-weight: bold;
+  font-size: 1.2em;
 }
