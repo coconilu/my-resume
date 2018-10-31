@@ -14,9 +14,9 @@ class ResumeHeader extends Component {
     return (
       <article className="resume-header-container">
         <section className="resume-header-left">
-          <div className="resume-header-avatar">
+          <a className="resume-header-avatar" href="https://wyh-resume.leanapp.cn">
             <img src={avatar} alt="头像"></img>
-          </div>
+          </a>
           <div className="resume-header-simple-message">
             <ul className="resume-list resume-list--absolute">
               <li className="resume-job-hunter">王耀辉</li>

@@ -100,7 +100,7 @@ class ResumeHeader extends Component {
               </ProjectDetails>
               <ProjectDetails title={(<ResumeLink link="https://codepen.io/coconilu" description="CodePen 个人主页：" />)}>
               </ProjectDetails>
-              <ProjectDetails title={(<ResumeLink link="https://juejin.im/user/5ab38356518825558b3dd86e/postsu" description="掘金个人主页：" />)}>
+              <ProjectDetails title={(<ResumeLink link="https://juejin.im/user/5ab38356518825558b3dd86e/posts" description="掘金个人主页：" />)}>
               </ProjectDetails>
             </div>
           </ResumeParagraph>
