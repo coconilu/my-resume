@@ -17,7 +17,7 @@ class ResumeHeader extends Component {
         <ResumeSection title="工作经验">
           <ResumeParagraph titleLeft="2017.03-至今" titleRight="深圳前海联动云汽车租赁有限公司／科技开发部">
             <p>1. 负责完善和维护公司内部的流程系统（BPM）；</p>
-            <p>2. 负责设计和开发公司内部的“员工自助系统”；</p>
+            <p>2. 负责设计和开发公司内部使用的“员工自助系统”；</p>
           </ResumeParagraph>
           <ResumeParagraph titleLeft="2016.08-2017.02" titleRight="卓望数码技术深圳有限公司／研发事业部">
             <p>1. 开发维护网络局数据项目，编写部署说明书指导运维部同事安装升级系统；</p>
@@ -25,10 +25,30 @@ class ResumeHeader extends Component {
           </ResumeParagraph>
           <ResumeParagraph titleLeft="2015.09-2016.07" titleRight="深圳市共济科技股份有限公司／研发部">
             <p>1. 调研Esper、Drools和StreamBase开源流引擎，与师兄合作开发一个事件流处理和复杂事件处理引擎；</p>
-            <p>2. 开发一个微信后台，用以及时推送重要（如机房预警、告警）消息给用户。</p>
+            <p>2. 维护微信服务号后台，开发及时推送重要（如机房预警、告警）消息给用户的功能。</p>
           </ResumeParagraph>
         </ResumeSection>
         <ResumeSection title="项目经验">
+          <ResumeParagraph titleLeft="开源社区" titleRight="iGitStar">
+            <div>
+              <ProjectDetails title="背景：">
+                iGitStar 是管理 GitHub stars 的辅助工具， 对于经常需要翻阅 stars 或者借助 stars 学习的用户非常适用，它可以帮你置顶你喜欢的 star 项目。
+              </ProjectDetails>
+              <ProjectDetails title="开发经过：">
+                1. 选择轻量级的架构，使用Koa搭设服务器，仅配置了一个静态资源中间件，前端使用VueJS加上亲自动手写组件、动画、异步加载过渡效果；<br />
+                2. 借鉴当下流行的骨架屏特效作为首屏加载过渡效果；<br />
+                3. 使用“防抖”机制处理“滚动至底异步加载资源”的功能，节省触发滚动事件的次数；<br />
+                4. 为了在载入资源的时候不阻塞网页，使用“requestAnimationFrame”优化页面插入元素；<br />
+                5. 使用“媒体查询”重构项目为响应式架构，使手机端也可以正常使用；<br />
+                6. 初期阶段不考虑账号鉴权功能，繁琐的操作不容易留住用户，所以用户仅需要通过输入自己的GitHub用户名便可以使用，并使用浏览器本地持久化API保存用户登录信息；<br />
+                7. 查看官方文档，成功对接获取GitHub数据的公开API；<br />
+                8. 如果项目很受欢迎的话，后期会添加标签和搜索功能。<br />
+              </ProjectDetails>
+              <ProjectDetails title="发布地址：">
+                <ResumeLink link="https://igitstar.leanapp.cn" />
+              </ProjectDetails>
+            </div>
+          </ResumeParagraph>
           <ResumeParagraph titleLeft="联动云" titleRight="员工自助平台">
             <div>
               <ProjectDetails title="背景：">
@@ -51,26 +71,6 @@ class ResumeHeader extends Component {
               </ProjectDetails>
             </div>
           </ResumeParagraph>
-          <ResumeParagraph titleLeft="开源社区" titleRight="iGitStar">
-            <div>
-              <ProjectDetails title="背景：">
-                iGitStar 是管理 GitHub stars 的辅助工具， 对于经常需要翻阅 stars 或者借助 stars 学习的用户非常适用，它可以帮你置顶你喜欢的 star 项目。
-              </ProjectDetails>
-              <ProjectDetails title="开发经过：">
-                1. 选择轻量级的架构，使用Koa搭设服务器，仅配置了一个静态资源中间件，前端使用VueJS加上亲自动手写组件、动画、异步加载过渡效果；<br />
-                2. 借鉴当下流行的骨架屏特效作为首屏加载过渡效果；<br />
-                3. 使用“防抖”机制处理“滚动至底异步加载资源”的功能，节省触发滚动事件的次数；<br />
-                4. 为了在载入资源的时候不阻塞网页，使用“requestAnimationFrame”优化页面插入元素；<br />
-                5. 使用“媒体查询”重构项目为响应式架构，使手机端也可以正常使用；<br />
-                6. 初期阶段不考虑账号鉴权功能，繁琐的操作不容易留住用户，所以用户仅需要通过输入自己的GitHub用户名便可以使用，并使用浏览器本地持久化API保存用户登录信息；<br />
-                7. 查看官方文档，成功对接获取GitHub数据的公开API；<br />
-                8. 如果项目很受欢迎的话，后期会添加标签和搜索功能。<br />
-              </ProjectDetails>
-              <ProjectDetails title="发布地址：">
-                <ResumeLink link="https://igitstar.leanapp.cn" />
-              </ProjectDetails>
-            </div>
-          </ResumeParagraph>
           <ResumeParagraph titleLeft="卓望数码" titleRight="数据业务网络局数据管理平台">
             <div>
               <ProjectDetails title="介绍：">
@@ -88,7 +88,7 @@ class ResumeHeader extends Component {
                 用于检测服务器的健康数据，对温度过高、湿度过高等信息进行规则匹配和处理。
               </ProjectDetails>
               <ProjectDetails title="项目任务：">
-                开发一个事件流处理和复杂事件处理引擎，负责调研对比开源流引擎，考虑价格、文档是否齐全，并实现几个业务场景（重复事件、闪烁事件），最后写成演讲稿请示领导。
+                开发一个事件流处理和复杂事件处理引擎，负责调研对比开源流引擎，考虑价格、文档是否齐全，并实现几个业务场景（重复事件、闪烁事件）。
               </ProjectDetails>
             </div>
           </ResumeParagraph>
