@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ResumeParagraph extends Component {
   render() {
     return (
-      <section className="resume-paragraph-container">
+      <section className="resume-paragraph-container resume-paragraph-container--init">
         <p className="resume-paragraph-container-title">
           {this.props.titleLeft}
         </p>
